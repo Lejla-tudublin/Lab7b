@@ -15,8 +15,11 @@ private:
     std::string departure_time_;
     int seat_capacity_ = 0;
     int seat_sold_ = 0;
+    string additional_info_[10]; // Array to hold up to 10 additional info strings
     
 public:
+    bool add_additional_info(const string& info);
+    
     Flight(string flight_number = "", string departure_time = "", int seat_capacity = 0, int seat_sold = 0)
         : flight_number_(flight_number),  
         seat_capacity_(seat_capacity), 
@@ -36,7 +39,7 @@ public:
     void set_seat_capacity(int capacity) ;
     bool set_seat_sold(int sold) ;
     friend ostream& operator<<(ostream& os, const Flight& flight);
-
+    bool sell_seat(int seats);
 };
 
 #endif // FLIGHT_H

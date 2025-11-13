@@ -18,6 +18,9 @@ int main() {
     } else {
         cout << "Failed to update seats sold due to invalid input.\n";
     }   
+    flight3.add_additional_info("In-flight WiFi available");
+    flight3.add_additional_info("Complimentary snacks provided");   
+    cout << flight3 << "\n";
     cin.get(); // Pause to see output   
     return 0;
 }
