@@ -33,9 +33,10 @@ public:
     // Setters
     void set_flight_number(const std::string& fn) { flight_number_ = fn; }
     void set_departure_time(const std::string& dt) { departure_time_ = dt; }
-    void set_seat_capacity(int capacity) { seat_capacity_ = (capacity < 0 ? 0 : capacity); }
-    void set_seat_sold(int sold) { seat_sold_ = (sold < 0 ? 0 : sold); }
+    void set_seat_capacity(int capacity) ;
+    bool set_seat_sold(int sold) ;
     friend ostream& operator<<(ostream& os, const Flight& flight);
+
 };
 
 #endif // FLIGHT_H
