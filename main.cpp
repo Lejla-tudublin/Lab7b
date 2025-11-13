@@ -13,7 +13,7 @@ int main() {
     //cout << flight4 << "\n";
     //cout << flight5 << "\n";
     //flight2.set_flight_number("AF678");
-    if (flight2.set_seat_sold(-9)) {
+    if (flight2.set_seat_sold(20)) {
             cout << "\n after \n" << flight2 << "\n";
     } else {
         cout << "Failed to update seats sold due to invalid input.\n";
@@ -21,6 +21,8 @@ int main() {
     flight3.add_additional_info("In-flight WiFi available");
     flight3.add_additional_info("Complimentary snacks provided");   
     cout << flight3 << "\n";
+    cout << "on flight " << flight2.flight_number() << "\n";
+    cout << flight2.check_available_seats() << " seats available.\n";
     cin.get(); // Pause to see output   
     return 0;
 }

@@ -6,7 +6,7 @@ ostream &operator<<(ostream &os, const Flight &flight)
         << flight.seat_capacity_ << ") departs at " 
         << flight.departure_time_
         << " sold: " << flight.seat_sold_ << " seats.\n"  ;
-        for(int i=0; i<10; ++i) {
+        for(int i=0; i<flight.MAX_ADD_INFO; ++i) {
             if (!flight.additional_info_[i].empty()) {
                 os << "  Info " << (i+1) << ": " << flight.additional_info_[i] << "\n";
             }
@@ -52,7 +52,7 @@ bool Flight::sell_seat(int seats)
 }
 bool Flight::add_additional_info(const string& info) {
     //bool isAdded = false;
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < MAX_ADD_INFO; ++i) {
         if (additional_info_[i].empty()) {
             additional_info_[i] = info;
             //isAdded = true;
@@ -61,4 +61,8 @@ bool Flight::add_additional_info(const string& info) {
         }
     }
     return false; // Array is full
+}
+
+int Flight::check_available_seats ()const{
+    return (seat_capacity_ - seat_sold_);
 }
